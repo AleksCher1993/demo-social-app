@@ -1,0 +1,21 @@
+.touched{
+    border: 3px solid red;
+}
+.validContainer{
+    position: relative;
+    margin-bottom: 40px;
+}
+.dNone{
+display: none;
+}
+.validError{
+    position: absolute;
+    background: rgb(164, 15, 15);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    bottom: 100%;
+    transition: all 0.3s ease 0s;
+
+
+}

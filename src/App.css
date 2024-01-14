@@ -28,6 +28,40 @@
   color: #61dafb;
 }
 
+.wrapper{
+
+}
+.wrapper__container{
+  max-width: 1280px;
+  gap: 30px;
+  margin: 10px auto 0;
+    display: grid;
+  grid-template-areas: 
+  "n c"
+  ;
+
+  grid-template-rows: 1fr;
+  grid-template-columns: 3fr 9fr;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+.publish__create-btn{
+  padding: 5px 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  border-radius: 20px;
+  border-style: none;
+  background: rgb(34, 173, 34);
+  color: white;
+  cursor: pointer;
+
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

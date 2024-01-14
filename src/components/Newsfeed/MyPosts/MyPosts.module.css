@@ -1,0 +1,8 @@
+
+.texarea{
+    margin-left: 10px;
+}
+.texarea textarea{
+    width: 90%;
+    resize: none;
+}

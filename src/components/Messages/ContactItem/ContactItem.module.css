@@ -1,0 +1,34 @@
+
+.contacts_item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.contacts_item::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(128, 128, 128, 0.253);
+    bottom: 0;
+}
+.contacts_img{
+    height: 60px;
+    flex-basis: 60px;
+    flex-shrink: 0;
+}
+.contacts_img img{
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+.contacts_content{}
+.contacts_name{
+
+}
+.contacts_shortDescription{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

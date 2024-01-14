@@ -1,0 +1,43 @@
+
+.peopleList{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;     
+    gap: 30px; 
+}
+.item{
+    border: 1px solid black;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.homosImg{
+    border: 1px solid red;
+    display: block;
+}
+.homosImgBody{
+    width: 100px;
+    height: 100px;
+}
+.homosImgBody img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.fullName{
+}
+.fullName span{}
+.placeOfPozition{
+}
+.placeOfPozition span{}
+.friendsNumber{
+
+}
+.friendsNumber p{}
+.homosFriends{}
+.homosFriendsText{}
+.follow{
+}

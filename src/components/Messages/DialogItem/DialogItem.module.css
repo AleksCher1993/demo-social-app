@@ -1,0 +1,32 @@
+.dialog_item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    margin-right: 10px;
+
+}
+.dialog_item.dialog_reverce{
+    flex-direction: row-reverse;
+}
+.dialog_img{
+    flex-basis: 50px;
+    flex-shrink: 0;
+    height: 50px;
+}
+.dialog_img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.dialog_content{
+    padding: 0 10px 10px 10px;
+    background: rgba(102, 201, 102, 0.404);
+    border-radius: 10px;
+    flex-basis: 100%;
+}
+.dialog_item.dialog_reverce .dialog_content{
+    background: rgba(96, 158, 199, 0.342);
+}
+.dialog_name{}
+.dialog_mess{}

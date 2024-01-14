@@ -1,0 +1,57 @@
+.nav{
+  grid-area: n;
+  margin-top: 40px;
+  
+}
+.nav__profile{
+  height: 90px;
+  background: linear-gradient(135deg, orange 60%, cyan);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.nav__ava{
+
+  position: relative;
+  z-index: 0;
+  top: -20px;
+  left: 20px;
+  width: 65px;
+  height: 65px;
+}
+.nav__ava::before{
+  content: "";
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  z-index: -1;
+  background: white;
+  border-radius: 50%;
+  top: -5px;
+  left: -5px;
+}
+.nav__ava img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.nav__list{
+  margin-top: 70px;
+}
+
+.nav ul{
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.nav__profile p{
+  flex-basis: 45%;
+  text-align: end;
+  padding-right: 20px;
+  background: linear-gradient(45deg, green 20%, #0D61BC 40%, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 900;
+}

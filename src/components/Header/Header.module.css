@@ -1,0 +1,80 @@
+.header{
+    grid-area: h;
+    background: linear-gradient(135deg, orange 60%, cyan);
+  
+  }
+  .header__container{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo{
+    display: flex;
+    margin: 10px;
+    
+  }
+  .logo__img{
+    width: 60px;
+    height: 60px;
+  }
+  .logo img{
+    width: 100%;
+    height: 100%;
+  }
+  .logo__name{
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    font-weight: 900;
+    align-self: center;
+    margin-left: 10px;
+    background: linear-gradient(45deg, green 20%, #0D61BC 40%, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header__nav{
+    align-self: center;
+  }
+  .header__nav ul{
+    display: flex;
+    padding: 0;
+  }
+  .header__nav ul li{}
+  .header__nav ul li a{
+    font-size: 18px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    margin: 0 10px;
+    background: linear-gradient(45deg, green 20%, #0D61BC 40%, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  .ava{
+    width: 50px;
+    height: 50px;
+  }
+  .ava img{
+    width: 100%;
+    height: 100%;
+  }
+  .logoBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: color 0.3s ease 0s;
+
+  }
+  .logoBlock>a{
+    
+    font-size: 24px;
+    
+  }
+  .logoBlock a:hover{
+    color: white;
+  }
