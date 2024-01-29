@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/demo-social-app/static/css/main.8baa0678.css",
-    "main.js": "/demo-social-app/static/js/main.2cad9ab7.js",
+    "main.js": "/demo-social-app/static/js/main.229503f0.js",
     "static/css/701.ada124b4.chunk.css": "/demo-social-app/static/css/701.ada124b4.chunk.css",
     "static/js/701.2667386d.chunk.js": "/demo-social-app/static/js/701.2667386d.chunk.js",
     "static/css/421.37ebc65d.chunk.css": "/demo-social-app/static/css/421.37ebc65d.chunk.css",
-    "static/js/421.90570a53.chunk.js": "/demo-social-app/static/js/421.90570a53.chunk.js",
+    "static/js/421.124511ff.chunk.js": "/demo-social-app/static/js/421.124511ff.chunk.js",
     "static/js/787.cec00faf.chunk.js": "/demo-social-app/static/js/787.cec00faf.chunk.js",
     "static/media/pustoymuch.png": "/demo-social-app/static/media/pustoymuch.157530fa0fc77eb2798c.png",
     "static/media/9_2.jpg": "/demo-social-app/static/media/9_2.8e3625bf7975dc5f8ae8.jpg",
@@ -15,15 +15,15 @@
     "static/media/pustoyprofile.jpg": "/demo-social-app/static/media/pustoyprofile.324278abb4b7e9feb43b.jpg",
     "index.html": "/demo-social-app/index.html",
     "main.8baa0678.css.map": "/demo-social-app/static/css/main.8baa0678.css.map",
-    "main.2cad9ab7.js.map": "/demo-social-app/static/js/main.2cad9ab7.js.map",
+    "main.229503f0.js.map": "/demo-social-app/static/js/main.229503f0.js.map",
     "701.ada124b4.chunk.css.map": "/demo-social-app/static/css/701.ada124b4.chunk.css.map",
     "701.2667386d.chunk.js.map": "/demo-social-app/static/js/701.2667386d.chunk.js.map",
     "421.37ebc65d.chunk.css.map": "/demo-social-app/static/css/421.37ebc65d.chunk.css.map",
-    "421.90570a53.chunk.js.map": "/demo-social-app/static/js/421.90570a53.chunk.js.map",
+    "421.124511ff.chunk.js.map": "/demo-social-app/static/js/421.124511ff.chunk.js.map",
     "787.cec00faf.chunk.js.map": "/demo-social-app/static/js/787.cec00faf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8baa0678.css",
-    "static/js/main.2cad9ab7.js"
+    "static/js/main.229503f0.js"
   ]
 }
