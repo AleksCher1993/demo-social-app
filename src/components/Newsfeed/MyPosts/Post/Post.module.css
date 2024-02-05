@@ -1,7 +1,9 @@
 .item{
-  color: white;
-
-  margin-top: 30px;
+  color: black;
+  background: rgb(235, 235, 235);
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
 }
 .item>div{
   display: flex;
@@ -21,6 +23,8 @@ height: 100%;
  }
  .like{
 margin-left: 50px;
+cursor: pointer;
+width: max-content;
  }
  .likeImg{
   width: 30px;

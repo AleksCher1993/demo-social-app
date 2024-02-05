@@ -4,7 +4,6 @@
   cursor: pointer;
     margin: 100px 0;
     font-size: 24px;
-
   }
   .item p{
     text-decoration: none;
@@ -28,6 +27,8 @@
 display: grid;
 grid-template-columns: 60px 60px 60px;
 gap: 10px;
+height: 160px;
+overflow: auto;
   }
   .list_item{
     width: 60px;
@@ -38,4 +39,29 @@ gap: 10px;
     width: 100%;
     height: 100%;
     border-radius: 50%;
+  }
+
+.userContainer:hover{
+  transform: scale(110%);
+}
+  .userName{
+    position: absolute;
+    top: -10px;
+    z-index: 2;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 16px;
+  }
+  .userContainer:hover .userName{
+    opacity: 1;
+    visibility: visible;
+  }
+  .pustoy{
+    object-fit: cover;
+    width: 200px;
+  }
+  .pustoy img{
+    width: 100%;
+    height: 100%;
   }

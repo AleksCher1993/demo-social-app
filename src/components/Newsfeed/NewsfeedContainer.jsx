@@ -1,7 +1,13 @@
 import React from "react";
-import { add_post_actionCreator, update_text_post_actionCreator } from "../../redux/newsfeedReducer";
+import { addLike, add_post_actionCreator} from "../../redux/newsfeedReducer";
 import Newsfeed from "./Newsfeed";
 import { connect } from "react-redux";
+
+const NewsfeedContainer=({profile,...props})=>{
+
+  
+return <Newsfeed profile={profile} {...props}/>
+}
 
 const mapStateToProps=(state)=>{
   return ({
@@ -11,7 +17,7 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
   return({
     addPost:(text)=>dispatch(add_post_actionCreator(text)),
+    addLike:(id,like)=>dispatch(addLike(like))
   })
 }
-const NewsfeedContainer=connect(mapStateToProps,mapDispatchToProps)(Newsfeed)
-export default NewsfeedContainer
+export default connect(mapStateToProps,mapDispatchToProps)(NewsfeedContainer)

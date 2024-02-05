@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import s from "./Paginator.module.css"
 const Pagination=({peopleCount,totalCount,numberPage,onPaginationClick,portionSize=10,...props})=>{
+  
   let pages=[]
   let pagesCountLength=Math.ceil(totalCount/peopleCount)
   let [portionNumber,setPortioNumber]=useState(1)   

@@ -1,11 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Images from "./components/Images/Images";
-import Musics from "./components/Musics/Musics";
-import Videos from "./components/Videos/Videos";
-import Settings from "./components/Settings/Settings";
-import NewsfeedContainer from "./components/Newsfeed/NewsfeedContainer";
+import { Navigate, Route, Routes } from "react-router-dom";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
 import ProffileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -15,13 +9,33 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { initializedSuccessThunk } from "./redux/appReduser";
 import Preloader from "./components/Common/Preloader/Preloader";
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import UsersContainer from "./components/Profile/usersProfile/UsersContainer";
 
 const PeopleContainer=React.lazy(()=>import("./components/People/PeopleContainer"))
 const MessagesContainer=React.lazy(()=>import("./components/Messages/MessagesContainer"))
+
+
+function withRouter(Component) {
+  function ComponentWithRouterProp(props) {
+    let location = useLocation();
+    let navigate = useNavigate();
+    let params = useParams();
+    return (
+      <Component {...props} router={{ location, navigate, params }} />
+    );
+  }
+  return ComponentWithRouterProp;
+}
+
+
+
 class App extends React.Component {
   componentDidMount = () => {
     
     this.props.initializedSuccessThunk();
+    document.title="F-connect"
+    
   };
   render = () => {
     if (!this.props.initializedApp) {
@@ -34,17 +48,14 @@ class App extends React.Component {
         <div className="wrapper__container">
           <NavbarContainer />
           <Routes>
-            <Route path="/profile/*" element={<ProffileContainer />}>
-              <Route path=":profileId" element={<ProffileContainer />} />
-            </Route>
+            <Route path="/profile" element={<ProffileContainer/>}/>
+              <Route path="/profile/:profileId" element={<UsersContainer/>} />
             <Route path="/messages/*" element={<Suspense fallback={<Preloader />}><MessagesContainer /></Suspense>} />
             <Route path="/people" element={<Suspense fallback={<Preloader />}><PeopleContainer /></Suspense>} />
-            <Route path="/musics" element={<Musics />} />
-            <Route path="/images" element={<Images />} />
-            <Route path="/videos" element={<Videos />} />
-            <Route path="/settings" element={<Settings />} />
             <Route path="/auth" element={<AuthContainer />} />
-            <Route path="/" element={<NewsfeedContainer />} />
+            <Route path="/" element={<Navigate to="/profile"/>} />
+            <Route path="*" element={<div>404 page not found</div>} />
+
           </Routes>
         </div>
       </div>
@@ -55,6 +66,6 @@ class App extends React.Component {
 const mapToStateToProps = (state) => ({
   initializedApp: state.app.initialized,
 });
-export default compose(connect(mapToStateToProps, { initializedSuccessThunk }))(
+export default compose(connect(mapToStateToProps, { initializedSuccessThunk }),withRouter)(
   App
 );

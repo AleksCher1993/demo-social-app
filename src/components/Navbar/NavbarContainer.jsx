@@ -3,11 +3,11 @@ import Navbar from "./Navbar";
 
 let mapStateToProps=(state)=>{
   return ({
-    navbar:state.navbar
+    navbar:state.navbar.navbarList,
+    profile:state.profilePage.profile,
+    users:state.navbar.items
   })
 }
-let mapDispatchToProps=()=>{
-  return ({})
-}
-const NavbarContainer=connect(mapStateToProps,mapDispatchToProps)(Navbar)
+
+const NavbarContainer=connect(mapStateToProps,{})(Navbar)
 export default NavbarContainer;

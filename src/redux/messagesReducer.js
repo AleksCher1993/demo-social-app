@@ -1,76 +1,19 @@
+import { messageAPI } from "../api/api";
+import store from "./store";
+
 const ADD_DIALOG = "ADD-DIALOG";
 const UPDATE_DIALOG = "UPDATE-DIALOG";
-const initialState = {
-  contacts: [
-    {
-      id: 1,
-      src: "1",
-      name: "Alena Dast",
-      shortdesctiption: "Hi there. How are you?",
-    },
-    {
-      id: 2,
-      src: "2",
-      name: "Alena Dast",
-      shortdesctiption: "Hi there. How are you?",
-    },
-    {
-      id: 3,
-      src: "3",
-      name: "Alena Dast",
-      shortdesctiption: "Hi there. How are you?",
-    },
-    {
-      id: 4,
-      src: "4",
-      name: "Alena Dast",
-      shortdesctiption: "Hi there. How are you?",
-    },
-    {
-      id: 5,
-      src: "5",
-      name: "Alena Dast",
-      shortdesctiption: "Hi there. How are you?",
-    },
-    {
-      id: 6,
-      src: "6",
-      name: "Alena Dast",
-      shortdesctiption: "Hi there. How are you?",
-    },
-    {
-      id: 7,
-      src: "7",
-      name: "Alena Dast",
-      shortdesctiption: "Hi there. How are you?",
-    },
-  ],
+const set_dialogs_to_friend="social-app/profile/set_dialogs_to_friend"
+const set_dialogs="social-app/profile/set_dialogs"
+const set_messages="social-app/profile/set_messages"
 
-  dialogs: [
-    { id: 1, mess: "Hi", name: "Alena Dast" },
-    { id: 2, mess: "Hello", name: "Alex Black" },
-    { id: 3, mess: "How are you", name: "Alena Dast" },
-    { id: 4, mess: "Fine, Thanks!", name: "Alex Black" },
-    { id: 5, mess: "Where do you work?!", name: "Alena Dast" },
-    { id: 6, mess: "I am not work(", name: "Alex Black" },
-    { id: 7, mess: "What is wrong?", name: "Alena Dast" },
-    { id: 8, mess: "Do not worry/ It is my fault(", name: "Alex Black" },
-    { id: 9, mess: "Understood", name: "Alena Dast" },
-  ],
-};
+const initialState={
+  contacts:null,
+  dialogs: null
+}
 const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_DIALOG: {
-      // const dialog = {
-      //   id: 10,
-      //   mess: state.textDialogs,
-      //   name: "Alex Black",
-      // };
-      // let newState = { ...state };
-      // newState.dialogs = [...state.dialogs];
-      // newState.dialogs.push(dialog);
-      // newState.textDialogs = "";
-      // return newState;
       return {
         ...state,
         dialogs: [
@@ -79,14 +22,61 @@ const messagesReducer = (state = initialState, action) => {
         ],
       };
     }
+    case set_dialogs:
+      return {...state,
+      contacts:action.data
+    }
+    case set_messages:
+      return {...state,
+        dialogs:action.items
+    }
     default:
       return state;
   }
 };
 export default messagesReducer;
-
+// =====================action creator========================
+const putStartDialogToFriendAC=(userId)=>({type:set_dialogs_to_friend,userId})
 export const update_dialog_actionCreator = (text) => ({
   type: UPDATE_DIALOG,
   mess: text,
 });
-export const add_dialog_actionCreator = (text) => ({ type: ADD_DIALOG,text });
+export const addDialogAC = (text) => ({ type: ADD_DIALOG,text });
+export const setDialogsToContactsAC=(data)=>({type:set_dialogs,data})
+export const setMessagesAC=(items)=>({type:set_messages,items})
+// ========================thunk=================================
+export const addDialog=(text)=>(dispatch)=>{
+  dispatch(addDialogAC(text))
+}
+export const putStartDialogToFriend=(id=null)=>async(dispatch)=>{
+  try {
+    let userId=id||store.getState().profilePage.users.userId
+    await messageAPI.putDialog(userId)
+    dispatch(getDialogUsers())
+    dispatch(getMessagesFromUser(userId))
+  } catch (error) {
+    
+  }
+}
+export const getDialogUsers=()=>async(dispatch)=>{
+  let data=await messageAPI.getDialog()
+  dispatch(setDialogsToContactsAC(data.data))
+  
+}
+export const postMessageToUser=(body,uId=null)=>async(dispatch)=>{
+  try { 
+    
+    let userId=uId||store.getState().profilePage.users.userId
+    await messageAPI.postMessageToUser(userId,body)
+    dispatch(getMessagesFromUser(userId))
+  } catch (error) {
+
+  }
+}
+export const getMessagesFromUser=(uId=null)=>async(dispatch)=>{
+  let userId=uId||store.getState().messagesPage.contacts[0].id
+  let data=await messageAPI.getMessagesFromUser(userId) 
+    dispatch(setMessagesAC(data.items))
+    
+
+}

@@ -1,15 +1,13 @@
 import React from 'react';
 import c from './MyPosts.module.css'
 import Post from './Post/Post';
-const MyPosts=({posts})=>{
+const MyPosts=({profile,posts,addLike})=>{
 
   
-    let postsRender=posts.map(post=><Post key={post.id} id={post.id} mess={post.mess} likeCount={post.likeCount}/>)
+    let postsRender=posts.map(post=><Post profile={profile} key={post.id} id={post.id} mess={post.mess} likeCount={post.likeCount} addLike={addLike}/>)
     
   
-    return      <div>
-      my posts
-      
+    return      <div> 
       <div>
         {postsRender}
       </div>

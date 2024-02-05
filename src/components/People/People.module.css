@@ -7,15 +7,16 @@
     gap: 30px; 
 }
 .item{
-    border: 1px solid black;
     width:100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    box-shadow: 0.1em 0.1em 0.4em rgb(34, 173, 34);
+    border-radius: 10px;
+    background: rgb(235, 235, 235);
 }
 .homosImg{
-    border: 1px solid red;
     display: block;
 }
 .homosImgBody{
@@ -28,6 +29,12 @@
     border-radius: 50%;
 }
 .fullName{
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+}
+.status{
+    margin-top: 0;
 }
 .fullName span{}
 .placeOfPozition{
@@ -40,4 +47,14 @@
 .homosFriends{}
 .homosFriendsText{}
 .follow{
+    padding: 5px 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    border-radius: 20px;
+    border-style: none;
+    background: rgb(34, 173, 34);
+    color: white;
+    cursor: pointer;
+    width: 127px;
+    margin-bottom: 10px;
 }

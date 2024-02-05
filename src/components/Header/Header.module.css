@@ -55,10 +55,24 @@
   .ava{
     width: 50px;
     height: 50px;
+    position: relative;
+    z-index: 1;
   }
   .ava img{
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+  }
+  .ava::before{
+    content: "";
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    z-index: -1;
+    background: white;
+    border-radius: 50%;
+    top: -3px;
+    left: -3px;
   }
   .logoBlock{
     display: flex;
@@ -78,3 +92,44 @@
   .logoBlock a:hover{
     color: white;
   }
+  .avaOptions{
+    padding-top: 10px;
+    width: 180px;
+    height: 100px;
+    background: white;
+    position: absolute;
+    box-shadow:0.1em 0.1em 0.4em rgb(34, 173, 34);
+    top: 100%;
+    left: -127px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+    z-index: 1;
+}
+.ava:hover  .avaOptions{
+    opacity: 1;
+    visibility: visible;
+}
+
+.avaOptions ul{
+    padding-left: 0px;
+    margin: 0;
+}
+.avaOptions ul li{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+}
+.avaOptions ul li:hover{
+    background: rgb(244, 244, 244);
+}
+.avaOptions ul li a{
+  color: black;
+  
+}
+.avaOptions ul li a:hover{
+  color: black;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { getAuthMe } from "./headerReducer";
+import { getProfile } from "./profileReducer";
 const set_initialized="set_initialized"
 let initializer={
     initialized:false,
@@ -26,8 +27,8 @@ export const initializedSuccess=()=>({
 export const initializedSuccessThunk=()=>(dispatch)=>{
     let getAuthMePrommise=dispatch(getAuthMe())
     Promise.all([getAuthMePrommise])
-    .then(()=>{
-        dispatch(initializedSuccess())
+    .then((data)=>{
+        dispatch(initializedSuccess())        
     })
 }
 export default appReduser

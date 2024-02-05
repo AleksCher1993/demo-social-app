@@ -15,11 +15,21 @@ export const userAPI = {
     instanse.post(`follow/${id}`).then((response) => response.data),
   deleteFollowedUsers: (id) =>
     instanse.delete(`follow/${id}`).then((response) => response.data),
+  getFollower:(peopleCount=20,isFollow=true)=>
+  instanse
+  .get(`users?count=${peopleCount}&friend=${isFollow}`)
+  .then(response=>response.data)
 };
 export const authAPI = {
   authMe: () => instanse.get(`auth/me`).then((response) => response.data),
-  postlogin:(email,password,rememberMe=false)=>instanse.post('auth/login',{email,password,rememberMe}).then(response=>response.data),
-  deleteLogin:()=>instanse.delete('auth/login').then(response=>response.data)
+  postlogin: (email, password, rememberMe = false, captcha=null) =>
+    instanse
+      .post("auth/login", { email, password, rememberMe, captcha })
+      .then((response) => response.data),
+  deleteLogin: () =>
+    instanse.delete("auth/login").then((response) => response.data),
+    getCaptcha:()=>
+    instanse.get("security/get-captcha-url").then(response=>response.data)
 };
 export const profileAPI = {
   getProfile: (profileId) =>
@@ -29,5 +39,33 @@ export const profileAPI = {
       return res.data;
     }),
   putStatus: (status) =>
-    instanse.put(`profile/status`,{status}).then(response=>response.data),
+    instanse
+      .put(`profile/status`, { status })
+      .then((response) => response.data),
+  putPhoto: (image) => {
+    return instanse
+      .put(
+        "profile/photo",
+        { image },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      )
+      .then((response) => response.data);
+  },
+  putProfile: (data)=>{
+    return instanse.put('profile',{...data,lookingForAJobDescription:"I looking for a job, please, Universe help me..."}).then(response=>response.data)
+  }
 };
+export const messageAPI={
+  putDialog:(userId)=>
+    instanse.put(`dialogs/${userId}`).then(response=>response.data),
+  getDialog:()=>
+    instanse.get('dialogs'),
+  getMessagesFromUser:(userId)=>
+    instanse.get(`dialogs/${userId}/messages`).then(response=>response.data),
+  postMessageToUser:(userId,body)=>
+    instanse.post(`dialogs/${userId}/messages`,{body})
+}

@@ -3,7 +3,11 @@
 }
 .validContainer{
     position: relative;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
+    flex-basis: 400px;
+}
+.validContainer input{
+
 }
 .dNone{
 display: none;
@@ -16,6 +20,5 @@ display: none;
     border-radius: 10px;
     bottom: 100%;
     transition: all 0.3s ease 0s;
-
-
+    text-wrap: nowrap;
 }

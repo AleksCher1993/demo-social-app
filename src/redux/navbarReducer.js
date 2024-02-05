@@ -1,15 +1,31 @@
-let initialState=[
-    {id:1,href:"/",mess:"Newsfeed"},
+import { userAPI } from "../api/api"
+
+const set_Follower="social-app-get-follower"
+let initialState={
+  navbarList:[
+    {id:1,href:"/profile",mess:"Profile"},
     {id:2,href:"/messages",mess:"Message"},
     {id:3,href:"/people",mess:"People"},
-    {id:4,href:"/musics",mess:"Musics"},
-    {id:5,href:"/images",mess:"Images"},
-    {id:6,href:"/videos",mess:"Videos"},
-    {id:7,href:"/settings",mess:"Settings"},
-    // {id:6,href:"/friends",mess:"Friends"},
-  ]
+  ],
+  items:null,
+}
 const navbarReducer=(state=initialState,action)=>{
-    return state
+    switch (action.type) {
+      case set_Follower:
+        
+        return {...state,items:action.items};
+    
+      default:
+        return state
+    }
+    
+}
+
+const setFollower=(items)=>({type:set_Follower,items})
+
+export const getFollower=()=>async(dispatch)=>{
+  let data=await userAPI.getFollower()
+  dispatch(setFollower(data.items))
 }
 
 export default navbarReducer

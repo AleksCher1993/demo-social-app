@@ -1,18 +1,17 @@
 import React from "react";
 import c from "./ContactItem.module.css"
-import ava from "./../../../accets/images/9_2.jpg"
-import { NavLink } from "react-router-dom";
-const ContactItem = ({src,name,shortdesctiption}) => {
+import pustoy from "./../../../accets/images/pustoyprofile.jpg"
+const ContactItem = ({id,src,name,shortdesctiption, setUserInfo,isActive}) => {
   return (
-    <NavLink to={`/messages/${src}`} className={c.contacts_item}>
+    <div className={isActive===id?c.contacts_item +" "+c.active:c.contacts_item} onClick={()=>setUserInfo(id,src)}>
       <div className={c.contacts_img}>
-        <img src={ava} alt="ava" />
+        <img src={src?src:pustoy} alt="ava" />
       </div>
       <div  className={c.contacts_content}>
         <p className={c.contacts_name}>{name}</p>
         <p className={c.contacts_shortDescription}>{shortdesctiption}</p>
     </div>
-      </NavLink>
+    </div>
   );
 };
 export default ContactItem;

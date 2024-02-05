@@ -1,13 +1,12 @@
 import React from "react";
 import c from "./DialogItem.module.css";
-import ava from "./../../../accets/images/9_2.jpg";
-import myAva from "./../../../accets/images/ava.jpg";
-const DialogItem = ({ mess, name, type }) => {
+import pustoy from "./../../../accets/images/pustoyprofile.jpg"
+const DialogItem = ({ src,mess, name, type }) => {
   
   return (
     <div className={type?`${c.dialog_item} ${c.dialog_reverce}`:c.dialog_item}>
       <div className={c.dialog_img}>
-        <img src={type?myAva:ava} alt="" />
+        <img src={src?src:pustoy} alt="" />
       </div>
       <div className={c.dialog_content}>
         <p className={c.dialog_name}>{name}</p>

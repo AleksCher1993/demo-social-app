@@ -17,6 +17,9 @@ export const getIsFetching=(state)=>{
  const getDisabledFollowsWhenFetshing=(state)=>{
     return state.peoplePage.disabledFollowsWhenFetshing
 }
+export const getProfile=(state)=>{
+    return state.profilePage.profile
+}
 // ------------------------------reselector---------------------------
 export const getUsersSelector=createSelector(getUsers,(people)=>{
     return people.filter(u=>true)

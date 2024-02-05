@@ -60,5 +60,7 @@ const mapStateToProps = (state) => {
 // };
 
 export default compose(connect(mapStateToProps,{getUsers,getOnPaginationClick,getFollow,getUnFollow}),
-withAuthRedirect)(PeopleAPIContainer);
+withAuthRedirect
+)
+(PeopleAPIContainer);
 

@@ -1,3 +1,4 @@
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { userAPI } from "../api/api";
 
 const folow = "follow";
@@ -7,75 +8,7 @@ const set_totalCount="set_totalCount"
 const set_numberPage="set_countAndPageonClick"
 const set_isFetching="set_is_fetching"
 const add_disabledFollowsWhenFetshing="disabledFollowsWhenFetshing"
-const peoplePageInitializer = {
-  // people: [
-  //   {
-  //     id: 0,
-  //     isFollow: true,
-  //     img: "https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/4/5e2cc15a922f4-bpfull.jpg",
-  //     name: "Aleks",
-  //     surname: "Black",
-  //     country: "Russia",
-  //     sityname: "Saint-Petersburg",
-  //     friends: 5,
-  //     href: "#s",
-  //   },
-  //   {
-  //     id: 1,
-  //     isFollow: false,
-  //     img: "https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/4/5e2cc15a922f4-bpfull.jpg",
-  //     name: "Viktor",
-  //     surname: "Coy",
-  //     country: "Russia",
-  //     sityname: "Moskow",
-  //     friends: 55,
-  //     href: "#s",
-  //   },
-  //   {
-  //     id: 2,
-  //     isFollow: false,
-  //     img: "https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/4/5e2cc15a922f4-bpfull.jpg",
-  //     name: "Selen",
-  //     surname: "Homez",
-  //     country: "Russia",
-  //     sityname: "Volgograd",
-  //     friends: 5555,
-  //     href: "#s",
-  //   },
-  //   {
-  //     id: 3,
-  //     isFollow: false,
-  //     img: "https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/4/5e2cc15a922f4-bpfull.jpg",
-  //     name: "Polina",
-  //     surname: "Gagarina",
-  //     country: "Russia",
-  //     sityname: "Samara",
-  //     friends: 21,
-  //     href: "#s",
-  //   },
-  //   {
-  //     id: 4,
-  //     isFollow: true,
-  //     img: "https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/4/5e2cc15a922f4-bpfull.jpg",
-  //     name: "Aleksandr",
-  //     surname: "Shpak",
-  //     country: "Russia",
-  //     sityname: "Sahalin",
-  //     friends: 30,
-  //     href: "#s",
-  //   },
-  //   {
-  //     id: 5,
-  //     isFollow: false,
-  //     img: "https://mythemestore.com/beehive-preview/wp-content/uploads/avatars/4/5e2cc15a922f4-bpfull.jpg",
-  //     name: "Irina",
-  //     surname: "Olegrova",
-  //     country: "Russia",
-  //     sityname: "Vladivostok",
-  //     friends: 47,
-  //     href: "#s",
-  //   },
-  // ],
+const initialState = {
   people:[],
   totalCount:25,
   peopleCount:5,
@@ -84,7 +17,7 @@ const peoplePageInitializer = {
   disabledFollowsWhenFetshing:[],
 };
 
-const peopleReducer = (state = peoplePageInitializer, action) => {
+const peopleReducer = (state = initialState, action) => {
   switch (action.type) {
     case folow:
       return {
@@ -195,3 +128,103 @@ export const getUnFollow=(id)=>(dispatch)=>{
         }
       })
 }
+// ===========================================================
+// =======================Thunk===============================
+// ===========================================================
+// export const getUsers=createAsyncThunk(
+//   "peopleName/getUsers"
+//   ,
+//   ({peopleCount,numberPage},{dispatch})=>{
+//     dispatch(setIsFetching(true))
+//     userAPI.getUsers(peopleCount,numberPage)
+//     .then((data) => {
+//       dispatch(setIsFetching(false))
+//       dispatch(setTotalCount({totalCount:data.totalCount}));
+//       return dispatch(setPeople(data.items));
+//     });
+//   }
+//   )
+//   export const getOnPaginationClick=createAsyncThunk(
+//     "peopleName/getOnPaginationClick",
+//     ({peopleCount,id},{dispatch})=>{
+//       dispatch(setIsFetching(true))
+//       dispatch(setNumberPage(id))
+      
+//       userAPI.getUsers(peopleCount,id)
+//       .then(data=>{
+        
+//       dispatch(setIsFetching(false))
+//           return dispatch(setPeople(data.items))
+//   }
+//     )
+//     }
+//   )
+//   export const getFollow=createAsyncThunk(
+//     "peopleName/getFollow",
+//     (userId,{dispatch})=>{
+//       // dispatch(addDisabledFollowsWhenFetshing({isFetching:true,userId:id}))
+      
+//       userAPI.postFollowedUsers(userId)
+//       .then(data=>{
+        
+//         if (data.resultCode===0) {
+//           dispatch(folow(userId))
+//           // dispatch(addDisabledFollowsWhenFetshing({isFetching:false,userId:id}))
+//         }
+//       })
+      
+//     }
+//   )
+//   export const getUnFollow=createAsyncThunk(
+//     "peopleName/getUnFollow",
+//     (id,{dispatch})=>{
+//       // dispatch(addDisabledFollowsWhenFetshing({isFetching:true,userId:id}))
+//       userAPI.deleteFollowedUsers(id)
+//       .then(data=>{
+//         if (data.resultCode===0) {
+//           dispatch(unFolow(id))
+//           // dispatch(addDisabledFollowsWhenFetshing({isFetching:false,userId:id}))
+//         }
+//       })
+//     }
+//   )
+// ================================================================
+// ========================Redux===================================
+// ================================================================
+
+
+// const peopleReducer=createSlice({
+//   name:"peopleName",
+//   initialState,
+//   reducers:{
+//     folow:(state,action)=>{
+//       let follower=state.people.find(item=>item.id===action.payload)
+//       follower.followed=true
+//     },
+//     unFolow:(state,action)=>{
+      
+//       let follower=state.people.find(item=>item.id===action.payload)
+//       follower.followed=false
+//     },
+//     setPeople:(state,action)=>{
+//       state.people=action.payload
+//     },
+//     setTotalCount:(state,action)=>{
+//       state.totalCount=action.payload.totalCount
+//     },
+//     setNumberPage:(state,action)=>{
+//       state.numberPage=action.payload
+//     },
+//     setIsFetching:(state,action)=>{
+//       state.isFetching=action.payload
+//     },
+//     addDisabledFollowsWhenFetshing:(state,action)=>{
+//       state.disabledFollowsWhenFetshing=action.payload.isFetching
+//       ?state.disabledFollowsWhenFetshing.push(action.payload.userId)
+//       :state.disabledFollowsWhenFetshing.filter(id=>id!==action.payload.userId)
+//     },
+//   }
+// })
+
+// export const {folow,unFolow,setPeople,setTotalCount,setNumberPage,setIsFetching,addDisabledFollowsWhenFetshing}=peopleReducer.actions;
+// export default peopleReducer.reducer;
