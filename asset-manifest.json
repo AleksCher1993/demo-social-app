@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/demo-social-app/static/css/main.13c8bb81.css",
-    "main.js": "/demo-social-app/static/js/main.d70fb0fa.js",
+    "main.js": "/demo-social-app/static/js/main.ad796a63.js",
     "static/css/701.5cba0131.chunk.css": "/demo-social-app/static/css/701.5cba0131.chunk.css",
     "static/js/701.cc6ec93a.chunk.js": "/demo-social-app/static/js/701.cc6ec93a.chunk.js",
-    "static/css/277.f4802cc7.chunk.css": "/demo-social-app/static/css/277.f4802cc7.chunk.css",
-    "static/js/277.3315cf81.chunk.js": "/demo-social-app/static/js/277.3315cf81.chunk.js",
+    "static/css/277.580aaa8f.chunk.css": "/demo-social-app/static/css/277.580aaa8f.chunk.css",
+    "static/js/277.2ec288c0.chunk.js": "/demo-social-app/static/js/277.2ec288c0.chunk.js",
     "static/js/787.cec00faf.chunk.js": "/demo-social-app/static/js/787.cec00faf.chunk.js",
     "static/media/pustoymuch.png": "/demo-social-app/static/media/pustoymuch.157530fa0fc77eb2798c.png",
     "static/media/backProfile.jpg": "/demo-social-app/static/media/backProfile.bd12ffb16303b460c408.jpg",
@@ -14,15 +14,15 @@
     "static/media/pustoyprofile.jpg": "/demo-social-app/static/media/pustoyprofile.324278abb4b7e9feb43b.jpg",
     "index.html": "/demo-social-app/index.html",
     "main.13c8bb81.css.map": "/demo-social-app/static/css/main.13c8bb81.css.map",
-    "main.d70fb0fa.js.map": "/demo-social-app/static/js/main.d70fb0fa.js.map",
+    "main.ad796a63.js.map": "/demo-social-app/static/js/main.ad796a63.js.map",
     "701.5cba0131.chunk.css.map": "/demo-social-app/static/css/701.5cba0131.chunk.css.map",
     "701.cc6ec93a.chunk.js.map": "/demo-social-app/static/js/701.cc6ec93a.chunk.js.map",
-    "277.f4802cc7.chunk.css.map": "/demo-social-app/static/css/277.f4802cc7.chunk.css.map",
-    "277.3315cf81.chunk.js.map": "/demo-social-app/static/js/277.3315cf81.chunk.js.map",
+    "277.580aaa8f.chunk.css.map": "/demo-social-app/static/css/277.580aaa8f.chunk.css.map",
+    "277.2ec288c0.chunk.js.map": "/demo-social-app/static/js/277.2ec288c0.chunk.js.map",
     "787.cec00faf.chunk.js.map": "/demo-social-app/static/js/787.cec00faf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.13c8bb81.css",
-    "static/js/main.d70fb0fa.js"
+    "static/js/main.ad796a63.js"
   ]
 }
