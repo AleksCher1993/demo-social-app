@@ -21,3 +21,10 @@
     padding-left: 10px;
     color: #07070771;
   }
+  @media (max-width:543.98px) {
+    .formForPost{
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }

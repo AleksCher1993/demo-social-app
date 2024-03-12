@@ -6,6 +6,7 @@
     grid-template-columns: 4fr 8fr;
     margin-top: 40px;
 }
+
 .contacts_list{
     display: flex;
     flex-direction: column;
@@ -19,6 +20,37 @@
     gap: 20px;
     position: relative;
 
+}
+@media (max-width:599.98px) {
+    .body{
+        display: flex;
+        flex-direction: column;
+    }
+    .contacts_list{
+        flex-direction: row;
+        height: 100%;
+        gap: 10px;
+        width: 96vw;
+    }
+    .contacts_item{
+        padding-right: 30px!important;
+    }
+    .dialog_list{
+        margin-left: 0!important;
+        border-left: none!important;
+    }
+    .send_body{
+        display: flex!important;
+        margin-left: 0px!important;
+        margin-right: 8px!important;
+    }
+    .send_body>div:nth-child(1){
+        display: none;
+    }
+    .textarea{
+        width: 100%;
+    }
+    
 }
 .pustoyContact{
     height: 400px;

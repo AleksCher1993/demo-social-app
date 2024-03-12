@@ -38,3 +38,12 @@
 .active{
     background: rgb(230, 228, 228);
 }
+@media (max-width:599.98px) {
+
+    .contacts_name{
+        display: none!important;
+    }
+    .contacts_item{
+        padding-right: 30px!important;
+    }
+}

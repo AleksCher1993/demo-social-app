@@ -4,6 +4,35 @@
     justify-content: center;
     gap: 20px;
 }
+@media (max-width:767.98px) {
+    .paginationConteiner{
+        margin-top: 50px;
+    }
+}
+@media (max-width:526.98px) {
+    .paginationConteiner{
+        flex-direction: column;
+    }
+.prev{
+    order: 2;
+    width: 100px;
+}
+.paginationNumber{
+    order: 1;
+}
+.next{
+    width: 100px;
+    order: 3;
+    position: absolute;
+    top: 100px;
+    right: 10px;
+}
+.divEmpty{
+    order: 2;
+    width: 100px;
+    }
+}
+
 .paginationNumber{
     display: flex;
     gap: 20px;

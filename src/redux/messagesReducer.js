@@ -59,9 +59,12 @@ export const putStartDialogToFriend=(id=null)=>async(dispatch)=>{
   }
 }
 export const getDialogUsers=()=>async(dispatch)=>{
+  try {
   let data=await messageAPI.getDialog()
   dispatch(setDialogsToContactsAC(data.data))
-  
+  } catch (error) {
+    
+  }
 }
 export const postMessageToUser=(body,uId=null)=>async(dispatch)=>{
   try { 

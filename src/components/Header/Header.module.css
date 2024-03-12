@@ -82,7 +82,7 @@
     font-weight: 700;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transition: color 0.3s ease 0s;
-
+    padding-right: 10px;
   }
   .logoBlock>a{
     

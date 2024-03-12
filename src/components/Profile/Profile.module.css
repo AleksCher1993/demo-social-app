@@ -17,6 +17,32 @@
     position: relative;
     z-index: 2;
 }
+@media (max-width:543.98px) {
+    .profileInfo{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .myAva{
+        left: 0!important;
+    }
+    .profileDescription{
+        position: absolute;
+        top: 80px;
+    }
+    .fullname{
+        margin-top: 0;
+    }
+    .editProfileBtn {
+        position: absolute;
+        top: -300px!important;
+        right: 0px!important;
+        background-color: none;
+    }
+    .editProfileBtn svg{
+        width: 24px!important;
+    }
+}
 .myAva{
     width: 180px;
     height: 180px;
@@ -140,7 +166,20 @@ height: 100%;
     cursor: pointer;
   margin-left: 10px;
   width: 210px;
-
+    display: flex;
+    justify-content: space-evenly;
+}
+@media (max-width:694.98px) {
+    .editProfileBtn button{
+        width: auto;
+    }
+    .dNone{
+        display: none;
+    }
+}
+.editProfileBtn button svg{
+    position: relative;
+    width: 18px;
 }
 .editProfileBtn button:hover{
     background: rgb(74, 186, 74);
@@ -219,6 +258,44 @@ box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
     gap: 80px;
     border-top: 2px solid white;
     align-items: center;
+}
+
+@media (max-width:599.98px) {
+    .fullnameContainer{
+        flex-direction: column;
+        gap: 0;
+        
+    }
+    .titleFullname{
+        flex-basis: 30px!important;
+        font-size: 18px;
+        font-weight: 700;
+        align-self: center;
+    }
+    .aboutmeContainer{
+        flex-direction: column;
+        gap: 0;
+        
+    }
+    .title{
+        flex-basis: 30px!important;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .aboutMeDesc{
+        flex-basis: 0px!important;
+        align-self: flex-start;
+    }
+    .contactsTitle{
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+    .contacts ul{
+        grid-template-columns: 1fr!important;
+        padding-left: 0px;
+    }
+
 }
 .title{
     flex-basis: 100px;

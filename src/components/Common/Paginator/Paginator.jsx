@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import s from "./Paginator.module.css"
-const Pagination=({peopleCount,totalCount,numberPage,onPaginationClick,portionSize=10,...props})=>{
+const Pagination=({peopleCount,totalCount,numberPage,onPaginationClick,portionSize=5,...props})=>{
   
   let pages=[]
   let pagesCountLength=Math.ceil(totalCount/peopleCount)
+  console.log(pagesCountLength);
   let [portionNumber,setPortioNumber]=useState(1)   
   let portionCount=Math.ceil(pagesCountLength/portionSize)      
   let leftCorner=(portionNumber-1)*portionSize+1   

@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./FriendsItem.module.css";
 import pusto from "./../../../accets/images/pustoyprofile.jpg"
-import Preloader from "../../Common/Preloader/Preloader";
 import { NavLink } from "react-router-dom";
 import pustoymuch from "./../../../accets/images/pustoymuch.png"
 const FriendsItem = ({users}) => {

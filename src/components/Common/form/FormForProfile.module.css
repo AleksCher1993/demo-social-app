@@ -68,3 +68,51 @@
     background: rgb(74, 186, 74);
 
 }
+@media (max-width:767.98px) {
+    .fullnameContainer{
+        margin-top: 50px;
+    }
+}
+@media (max-width:543.98px) {
+    .commonContainer{
+        padding: 30px 25px 30px 0px;
+    }
+    .fullnameContainer{
+        flex-direction: column;
+        gap: 0;
+        margin-top: 50px;
+    }
+    .titleFullname{
+        flex-basis: 30px!important;
+        font-size: 18px;
+        font-weight: 700;
+        align-self: center;
+        margin-bottom: 10px;
+    }
+    .aboutmeContainer{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+    .title{
+        align-self: center;
+        flex-basis: 30px!important;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+
+    }
+    .aboutMeDesc{
+        flex-basis: 0px!important;
+    }
+    .contactsTitle{
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+    .contacts ul{
+        grid-template-columns: 1fr!important;
+        padding-left: 0px;
+    }
+    
+}
